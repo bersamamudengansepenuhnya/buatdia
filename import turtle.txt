@@ -1,0 +1,31 @@
+import turtle
+
+# Function to draw a flower petal
+def draw_petal():
+    turtle.circle(100, 60)  # Draw a semicircle
+    turtle.left(120)         # Turn left
+    turtle.circle(100, 60)   # Draw another semicircle
+    turtle.left(120)         # Turn left again
+
+# Function to draw a flower
+def draw_flower():
+    turtle.color("red")      # Set the color of the petals
+    turtle.begin_fill()      # Start filling the color
+    for _ in range(6):       # Draw 6 petals
+        draw_petal()
+        turtle.right(60)      # Turn to position for the next petal
+    turtle.end_fill()        # Fill the petals with color
+
+# Function to draw the stem
+def draw_stem():
+    turtle.color("green")    # Set the color of the stem
+    turtle.right(90)         # Turn to face downwards
+    turtle.pensize(5)        # Set the thickness of the stem
+    turtle.forward(200)      # Draw the stem
+
+# Main program
+turtle.speed(10)             # Set the drawing speed
+draw_flower()                # Draw the flower
+draw_stem()                  # Draw the stem
+turtle.hideturtle()          # Hide the turtle cursor
+turtle.done()                # Finish the drawing
